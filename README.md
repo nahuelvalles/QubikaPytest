@@ -1,43 +1,52 @@
 QubikaPytest
 This project is a technical challenge implementing automated tests using Selenium and pytest in Python.
 
-Requirements
-Python: Ensure you have Python version 3.8 or higher installed. 
-You can check the version by running python --version in your terminal. 
-If it is not installed, you can download it from the official Python website at python.org/downloads.
+************************************************************************
+REQUIREMENTS AND HOW TO RUN TCs (Visual Studio Code / Pycharm)
 
-pip: This is Python's package manager and should be installed with Python by default. 
-Verify its installation by running pip --version.
+Visual Studio Code:
 
-Selenium: This is required for browser automation and will be installed via the requirements.txt file.
+Download repository or clone it
+Install python in your machine
 
-*Following step not needed for lastest version of Selenium*
-Webdriver: Depending on the browser you want to use, such as Chrome, you will need the appropriate driver. 
-For Chrome, download the ChromeDriver from the official website. Ensure the version of the driver matches your browser version.
+*Make sure you are located on project's root folder for the following steps*
 
-Installation
-Clone this repository by using the GitHub URL provided.
+Within IDE terminal execute: 
+	pip install python
+	pip install pytest
+	pip install selenium
+	python -m venv venv
+	.\venv\Scripts\activate
+	pip install requirements.txt
+
+Now you can go to the "Tests" view on the left side to interact with the different Test Cases
+or execute the following commands
+
+python -m pytest -m navigation -> Run "Navigation" TC 
+python -m pytest -m negative -> Run "Negative" TC
+python -m pytest -> Run all TCs
+
+-----------------------------------------------------
+Pycharm:
+
+
+Download or clone repo:
+
 git clone https://github.com/nahuelvalles/QubikaPytest.git
 
-Optionally: create a virtual environment to isolate the project dependencies. This step is recommended to avoid conflicts with other projects.
+once you are in Pycharm's terminal and located in QubikaPytest folder run these commands:
 
-Install the required dependencies listed in the requirements.txt file by running pip install with the file as input.
-pip install requirements.txt
+	python -m venv virtualenv
+	.\virtualenv\Scripts\activate
+	pip install -r requirements.txt
 
-Running the Tests
-Verify that the Webdriver is properly configured and the project dependencies are installed.
+Now you can run the TCs by using following commands:
 
-Run the tests in terminal:
+pytest -m navigation -> Run "Navigation" TC 
+pytest -m negative -> Run "Negative" TC
+pytest -> Run all TCs
 
-pytest -m navigation 
-  It will execute the TC related to navigate to Qubika's web page and verified the URL it is the expected one and the logo is displayed
-  
-pytest -m negative
-  It will execute the TC where it opens the "Contact Us" button and validate different aspects of the form.
-
-pytest
-  It will execute all TCs
-
+************************************************************************
 Project Structure:
 
 Reports Folder
